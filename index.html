@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Minnesota Growler Map</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      th {
+        text-align: left;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+    var localBreweries = {
+        'Harriet Brewing Co': {
+             name: 'Harriet Brewing Co',
+             logo: 'https://lh6.googleusercontent.com/-ZeZjVqvuXRc/Vbf_Ui8osuI/AAAAAAAAAB8/3m6TnWUdp-4/s500-no/abc.jpg',
+             address: '3036 Minnehaha Ave Minneapolis, MN 55406',
+             coordinates: [44.9471201,-93.2338642],
+             description: "<b>Harriet Brewing Co</b> is a European-style brewery that sells growlers & offers a taproom with live local bands on weekends.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/24815/',
+             googlePlusUrl: 'https://plus.google.com/106341737335699574247/about?hl=en',
+             breweryWebsiteUrl: 'http://www.harrietbrewing.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 5,
+             sellsOnSunday: true
+        },
+        'Fair State Brewing Cooperative': {
+             name: 'Fair State Brewing Cooperative',
+             logo: 'https://lh6.googleusercontent.com/-GEPXf27VB1s/VA4zn5xipmI/AAAAAAAAABI/yDcb53C3k3Y/w1002-h996-no/fsbc-logo.png',
+             address: '2506 Central Ave NE, Minneapolis, MN 55418',
+             coordinates: [45.0135441,-93.2477865],
+             description: "The goal of <b>Fair State Brewing Cooperative</b> is to put the natural connection between brewer and community to work to create something that truly belongs to us all. Creating infinite community and quality craft beers.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35996/',
+             googlePlusUrl: 'https://plus.google.com/112643375722668227812/about?hl=en',
+             breweryWebsiteUrl: 'http://fairstate.coop/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: true
+        },
+        'Indeed Brewing Company': {
+             name: 'Indeed Brewing Company',
+             logo: 'http://www.indeedbrewing.com/wp-content/uploads/2015/07/IBC_BadgeKO_RGB_ORG_Reverse.png',
+             address: '711 NE 15th Ave Minneapolis, MN 55413',
+             coordinates: [45.0034212, -93.2515489],
+             description: "Indeed Brewing Company and taproom has a penchant for adventure, both in the beers we brew and the way we go about brewing them.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/29223/',
+             googlePlusUrl: 'https://plus.google.com/100601120567521971248/about?hl=en',
+             breweryWebsiteUrl: 'http://www.indeedbrewing.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: true
+        },
+        'Bauhaus Brew Labs': {
+             name: 'Bauhaus Brew Labs',
+             logo: 'https://lh4.googleusercontent.com/-AhGp6mMEl1I/U85vJG6vqjI/AAAAAAAAAB0/tXazsnU0Kw8/s1400-no/bbl%2Blogo.png',
+             address: '1315 Tyler St NE Minneapolis, MN 55413',
+             coordinates: [45.0006722, -93.2446239],
+             description: "Bauhaus Brew Labs is a family brewery that creates unique, imaginative, German-inspired lighter beers designed to ignite your senses and make your wilder dreams come true.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35769/',
+             googlePlusUrl: 'https://plus.google.com/+BauhausBrewLabsMinneapolis/about?hl=en',
+             breweryWebsiteUrl: 'http://bauhausbrewlabs.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: false
+        },
+        "Barley John's Brew Pub": {
+             name: "Barley John's Brew Pub",
+             logo: 'http://cedarcreekenergy.com/wp-content/uploads/2012/02/barleyjohns.jpg',
+             address: '781 Old Hwy 8 SW New Brighton, MN 55112',
+             coordinates: [45.0361687, -93.1981807],
+             description: "Barley John's is a Brew Pub located just north of downtown Minneapolis. We specialize in hand crafting both beer and food with flavor and integrity. Spacious outdoor patio when weather permits.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/1168/',
+             googlePlusUrl: 'https://plus.google.com/113163131036454625569/about?hl=en',
+             breweryWebsiteUrl: 'http://www.barleyjohns.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: false
+        },
+        "HammerHeart Brewing Company": {
+             name: "HammerHeart Brewing Company",
+             logo: 'http://mnbeeractivists.com/Media/2013/07/HammerHeart-Logo-Square.jpg',
+             address: '7785 Lake Dr Lino Lakes, MN 55014',
+             coordinates: [45.188998, -93.1069751],
+             description: "A rustic, wood-walled taproom sets the vibe for Nordic-inspired beers at this snug craft brewery.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/31326/',
+             googlePlusUrl: 'https://plus.google.com/118044684577728735544/about?hl=en',
+             breweryWebsiteUrl: 'http://hammerheartbrewing.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: true
+        },
+        "Granite City Brewery - Maple Grove": {
+             name: "Granite City Brewery - Maple Grove",
+             logo: '',
+             address: '7785 Lake Dr Lino Lakes, MN 55014',
+             coordinates: [45.0905432, -93.4320349],
+             description: "A rustic, wood-walled taproom sets the vibe for Nordic-inspired beers at this snug craft brewery.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/9768/',
+             googlePlusUrl: null,
+             breweryWebsiteUrl: 'http://www.gcfb.com/location/maple-grove-minnesota',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 25,
+             sellsOnSunday: true
+        }
+    };
+    
+    var geocoder;
+    var map;
+    var infowindow;
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(44.9478865, -93.2163555);
+        var mapOptions = {
+          zoom: 11,
+          center: latlng
+        }
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      
+        for (var localBrewery in localBreweries) {
+            var _localBrewery = localBreweries[localBrewery];
+            var checklistTable = '<table>' + 
+                                 '<tr><th>Refills <u>Any</u> Growler:</th><td>' + (_localBrewery.refillsAnyGrowler ? 'Yes' : 'No') + '</td></tr>' + 
+                                 '<tr><th>Exchanges Growler:</th><td>' + (_localBrewery.exchangesGrowler ? 'Yes' : 'No') + '</td></tr>' + 
+                                 '<tr><th>Growler Bottle Price:</th><td>$' + _localBrewery.growlerBottlePrice + '</td></tr>' + 
+                                 '<tr><th>Sells On Sunday:</th><td>' + (_localBrewery.sellsOnSunday ? 'Yes' : 'No') + '</td></tr>' + 
+                                 '</table>';
+            _localBrewery.latLang = new google.maps.LatLng(_localBrewery.coordinates[0], _localBrewery.coordinates[1]);
+            var linksArray = new Array();
+            var linksProperties = {
+                'beerAdvocateUrl': 'Beer Advocate',
+                'googlePlusUrl': 'Google+',
+                'breweryWebsiteUrl': 'Website'
+            };
+            for (var linksProperty in linksProperties) {
+                if (_localBrewery[linksProperty]) {
+                    linksArray.push('<a target="_blank" href="' + _localBrewery[linksProperty] + '">' + linksProperties[linksProperty] + '<br/>');
+                }
+            }
+            var links = '<h3>Links:</h3>' + linksArray.join('');
+            var html = '<div id="content">' +
+                       '<div id="siteNotice">' +
+                       '</div>' +
+                       '<img src="' + _localBrewery.logo + '" style="max-height: 100px; max-width: 100px; float: right" />' +
+                       '<h1 id="firstHeading" class="firstHeading">' + _localBrewery.name + '</h1>' +
+                       '<p>' + _localBrewery.address + '</p>' +
+                       '<div id="bodyContent"><p>' + _localBrewery.description + '</p>' + 
+                       checklistTable + '<br/>' + 
+                       links
+                       '</div>' +
+                       '</div>';
+    
+            _localBrewery.infoWindow = new google.maps.InfoWindow({
+                content: html
+            });
+    
+            _localBrewery.marker = new google.maps.Marker({
+                map: map,
+                position: _localBrewery.latLang
+            });
+    
+            addMarkerClickFunction(map, _localBrewery);
+        }
+    }
+    
+    function addMarkerClickFunction(map, _localBrewery) {
+        google.maps.event.addListener(_localBrewery.marker, 'click', function() {
+            if (infowindow) {
+                infowindow.close();
+            }
+            infowindow = _localBrewery.infoWindow;
+            _localBrewery.infoWindow.open(map, _localBrewery.marker);
+        });
+    }
+      
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
