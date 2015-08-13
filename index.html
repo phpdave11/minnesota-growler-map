@@ -17,61 +17,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
     var localBreweries = {
-        'Harriet Brewing Co': {
-             name: 'Harriet Brewing Co',
-             logo: 'https://lh6.googleusercontent.com/-ZeZjVqvuXRc/Vbf_Ui8osuI/AAAAAAAAAB8/3m6TnWUdp-4/s500-no/abc.jpg',
-             address: '3036 Minnehaha Ave Minneapolis, MN 55406',
-             coordinates: [44.9471201,-93.2338642],
-             description: "<b>Harriet Brewing Co</b> is a European-style brewery that sells growlers & offers a taproom with live local bands on weekends.",
-             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/24815/',
-             googlePlusUrl: 'https://plus.google.com/106341737335699574247/about?hl=en',
-             breweryWebsiteUrl: 'http://www.harrietbrewing.com/',
-             refillsAnyGrowler: true,
-             exchangesGrowler: false,
-             growlerBottlePrice: 5,
-             sellsOnSunday: true
-        },
-        'Fair State Brewing Cooperative': {
-             name: 'Fair State Brewing Cooperative',
-             logo: 'https://lh6.googleusercontent.com/-GEPXf27VB1s/VA4zn5xipmI/AAAAAAAAABI/yDcb53C3k3Y/w1002-h996-no/fsbc-logo.png',
-             address: '2506 Central Ave NE, Minneapolis, MN 55418',
-             coordinates: [45.0135441,-93.2477865],
-             description: "The goal of <b>Fair State Brewing Cooperative</b> is to put the natural connection between brewer and community to work to create something that truly belongs to us all. Creating infinite community and quality craft beers.",
-             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35996/',
-             googlePlusUrl: 'https://plus.google.com/112643375722668227812/about?hl=en',
-             breweryWebsiteUrl: 'http://fairstate.coop/',
-             refillsAnyGrowler: true,
-             exchangesGrowler: false,
-             growlerBottlePrice: 'Unknown',
-             sellsOnSunday: true
-        },
-        'Indeed Brewing Company': {
-             name: 'Indeed Brewing Company',
-             logo: 'http://www.indeedbrewing.com/wp-content/uploads/2015/07/IBC_BadgeKO_RGB_ORG_Reverse.png',
-             address: '711 NE 15th Ave Minneapolis, MN 55413',
-             coordinates: [45.0034212, -93.2515489],
-             description: "Indeed Brewing Company and taproom has a penchant for adventure, both in the beers we brew and the way we go about brewing them.",
-             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/29223/',
-             googlePlusUrl: 'https://plus.google.com/100601120567521971248/about?hl=en',
-             breweryWebsiteUrl: 'http://www.indeedbrewing.com/',
-             refillsAnyGrowler: true,
-             exchangesGrowler: false,
-             growlerBottlePrice: 'Unknown',
-             sellsOnSunday: true
-        },
-        'Bauhaus Brew Labs': {
-             name: 'Bauhaus Brew Labs',
-             logo: 'https://lh4.googleusercontent.com/-AhGp6mMEl1I/U85vJG6vqjI/AAAAAAAAAB0/tXazsnU0Kw8/s1400-no/bbl%2Blogo.png',
-             address: '1315 Tyler St NE Minneapolis, MN 55413',
-             coordinates: [45.0006722, -93.2446239],
-             description: "Bauhaus Brew Labs is a family brewery that creates unique, imaginative, German-inspired lighter beers designed to ignite your senses and make your wilder dreams come true.",
-             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35769/',
-             googlePlusUrl: 'https://plus.google.com/+BauhausBrewLabsMinneapolis/about?hl=en',
-             breweryWebsiteUrl: 'http://bauhausbrewlabs.com/',
-             refillsAnyGrowler: true,
-             exchangesGrowler: false,
-             growlerBottlePrice: 'Unknown',
-             sellsOnSunday: false
+        '56 Brewing': {
+             name: '56 Brewing',
+             refillsStainless: true
         },
         "Barley John's Brew Pub": {
              name: "Barley John's Brew Pub",
@@ -85,7 +33,58 @@
              refillsAnyGrowler: true,
              exchangesGrowler: false,
              growlerBottlePrice: 'Unknown',
-             sellsOnSunday: false
+             sellsOnSunday: false,
+             refillsStainless: true
+        },
+        'Bauhaus Brew Labs': {
+             name: 'Bauhaus Brew Labs',
+             logo: 'https://lh4.googleusercontent.com/-AhGp6mMEl1I/U85vJG6vqjI/AAAAAAAAAB0/tXazsnU0Kw8/s1400-no/bbl%2Blogo.png',
+             address: '1315 Tyler St NE Minneapolis, MN 55413',
+             coordinates: [45.0006722, -93.2446239],
+             description: "Bauhaus Brew Labs is a family brewery that creates unique, imaginative, German-inspired lighter beers designed to ignite your senses and make your wilder dreams come true.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35769/',
+             googlePlusUrl: 'https://plus.google.com/+BauhausBrewLabsMinneapolis/about?hl=en',
+             breweryWebsiteUrl: 'http://bauhausbrewlabs.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: false,
+             refillsStainless: true
+        },
+        'Boom Island': {
+             name: 'Boom Island',
+             refillsStainless: false
+        },
+        'Canal Park': {
+             name: 'Canal Park',
+             refillsStainless: true
+        },
+        'Dangerous Man': {
+             name: 'Dangerous Man',
+             refillsStainless: false
+        },
+        'Day Block': {
+             name: 'Day Block',
+             refillsStainless: false
+        },
+        'Fair State Brewing Cooperative': {
+             name: 'Fair State Brewing Cooperative',
+             logo: 'https://lh6.googleusercontent.com/-GEPXf27VB1s/VA4zn5xipmI/AAAAAAAAABI/yDcb53C3k3Y/w1002-h996-no/fsbc-logo.png',
+             address: '2506 Central Ave NE, Minneapolis, MN 55418',
+             coordinates: [45.0135441,-93.2477865],
+             description: "The goal of <b>Fair State Brewing Cooperative</b> is to put the natural connection between brewer and community to work to create something that truly belongs to us all. Creating infinite community and quality craft beers.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/35996/',
+             googlePlusUrl: 'https://plus.google.com/112643375722668227812/about?hl=en',
+             breweryWebsiteUrl: 'http://fairstate.coop/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: true,
+             refillsStainless: true
+        },
+        'Fulton': {
+             name: 'Fulton',
+             refillsStainless: false
         },
         "HammerHeart Brewing Company": {
              name: "HammerHeart Brewing Company",
@@ -115,10 +114,69 @@
              growlerBottlePrice: 25,
              sellsOnSunday: true
         },
+        'Harriet Brewing Co': {
+             name: 'Harriet Brewing Co',
+             logo: 'https://lh6.googleusercontent.com/-ZeZjVqvuXRc/Vbf_Ui8osuI/AAAAAAAAAB8/3m6TnWUdp-4/s500-no/abc.jpg',
+             address: '3036 Minnehaha Ave Minneapolis, MN 55406',
+             coordinates: [44.9471201,-93.2338642],
+             description: "<b>Harriet Brewing Co</b> is a European-style brewery that sells growlers & offers a taproom with live local bands on weekends.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/24815/',
+             googlePlusUrl: 'https://plus.google.com/106341737335699574247/about?hl=en',
+             breweryWebsiteUrl: 'http://www.harrietbrewing.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 5,
+             sellsOnSunday: true,
+             name: 'Harriet',
+             refillsStainless: true
+        },
+        'Indeed Brewing Company': {
+             name: 'Indeed Brewing Company',
+             logo: 'http://www.indeedbrewing.com/wp-content/uploads/2015/07/IBC_BadgeKO_RGB_ORG_Reverse.png',
+             address: '711 NE 15th Ave Minneapolis, MN 55413',
+             coordinates: [45.0034212, -93.2515489],
+             description: "Indeed Brewing Company and taproom has a penchant for adventure, both in the beers we brew and the way we go about brewing them.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/29223/',
+             googlePlusUrl: 'https://plus.google.com/100601120567521971248/about?hl=en',
+             breweryWebsiteUrl: 'http://www.indeedbrewing.com/',
+             refillsAnyGrowler: true,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: true,
+             refillsStainless: true
+        },
+        'Insight': {
+            name: 'Insight',
+            refillsStainless: false
+        },
+        'Lupulin': {
+            name: 'Lupulin',
+            refillsStainless: true
+        },
+        'LynLake': {
+            name: 'LynLake',
+            refillsStainless: false
+        },
+        'Northbound': {
+            name: 'Northbound',
+            refillsStainless: false
+        },
+        'NorthGate': {
+            name: 'NorthGate',
+            refillsStainless: true
+        },
+        'Sidhe': {
+            name: 'Sidhe',
+            refillsStainless: true
+        },
+        'Sisyphus': {
+            name: 'Sisyphus',
+            refillsStainless: false
+        },
         "Sociable Cider Werks": {
              name: "Sociable Cider Werks",
              logo: 'http://static1.squarespace.com/static/50c67306e4b0c1ce7044a47f/t/51a531d0e4b00f44289638c1/1438691412363/?format=1500w',
-             address: '1500 Fillmore St NE Minneapolis, MN 5541',
+             address: '1500 Fillmore St NE Minneapolis, MN 55413',
              coordinates: [45.0045059, -93.2442383],
              description: "This informal tasting room offers its own brands of craft ciders, food trucks eats & live music.",
              beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/9768/',
@@ -127,8 +185,28 @@
              refillsAnyGrowler: false,
              exchangesGrowler: false,
              growlerBottlePrice: 'Unknown',
-             sellsOnSunday: true
-        }
+             sellsOnSunday: true,
+             refillsStainless: true
+         },
+         'Steel Toe': {
+             name: 'Steel Toe',
+             logo: 'http://static1.squarespace.com/static/55156fe0e4b08ae213e20660/t/551575a4e4b096a00144606e/1439318867167/?format=1500w',
+             address: '4848 W 35th St St Louis Park, MN 55416',
+             coordinates: [44.9412869, -93.3413125],
+             description: "<b>Steel Toe Brewing</b> is a small MN craft brewery with big dreams of staying small.",
+             beerAdvocateUrl: 'http://www.beeradvocate.com/beer/profile/26565/',
+             googlePlusUrl: null,
+             breweryWebsiteUrl: 'http://www.steeltoebrewing.com/',
+             refillsAnyGrowler: false,
+             exchangesGrowler: false,
+             growlerBottlePrice: 'Unknown',
+             sellsOnSunday: false,
+             refillsStainless: false
+         },
+         'Town Hall': {
+             name: 'Town Hall',
+             refillsStainless: false
+         }
     };
     
     var geocoder;
@@ -145,47 +223,59 @@
       
         for (var localBrewery in localBreweries) {
             var _localBrewery = localBreweries[localBrewery];
-            var checklistTable = '<table>' + 
-                                 '<tr><th>Refills <u>Any</u> Growler:</th><td>' + (_localBrewery.refillsAnyGrowler ? 'Yes' : 'No') + '</td></tr>' + 
-                                 '<tr><th>Exchanges Growler:</th><td>' + (_localBrewery.exchangesGrowler ? 'Yes' : 'No') + '</td></tr>' + 
-                                 '<tr><th>Growler Bottle Price:</th><td>$' + _localBrewery.growlerBottlePrice + '</td></tr>' + 
-                                 '<tr><th>Sells On Sunday:</th><td>' + (_localBrewery.sellsOnSunday ? 'Yes' : 'No') + '</td></tr>' + 
-                                 '</table>';
-            _localBrewery.latLang = new google.maps.LatLng(_localBrewery.coordinates[0], _localBrewery.coordinates[1]);
-            var linksArray = new Array();
-            var linksProperties = {
-                'beerAdvocateUrl': 'Beer Advocate',
-                'googlePlusUrl': 'Google+',
-                'breweryWebsiteUrl': 'Website'
-            };
-            for (var linksProperty in linksProperties) {
-                if (_localBrewery[linksProperty]) {
-                    linksArray.push('<a target="_blank" href="' + _localBrewery[linksProperty] + '">' + linksProperties[linksProperty] + '<br/>');
+            if (typeof _localBrewery.coordinates !== 'undefined') {    
+                var refillsAnyGrowlerText = (_localBrewery.refillsAnyGrowler ? 'Yes' : 'No');
+                var exchangesGrowlerText = (_localBrewery.exchangesGrowler ? 'Yes' : 'No');
+                var sellsOnSundayText = (_localBrewery.sellsOnSunday ? 'Yes' : 'No');
+                var refillsStainlessText = 'Unknown';
+                if (typeof _localBrewery.refillsStainless !== 'undefined') {
+                    refillsStainlessText = (_localBrewery.refillsStainless ? 'Yes' : 'No');
                 }
+    
+                var checklistTable = '<table>' + 
+                                     '<tr><th>Refills <u>Any</u> Growler:</th><td>' + refillsAnyGrowlerText + '</td></tr>' + 
+                                     '<tr><th>Refills Stainless Steel:</th><td>' + refillsStainlessText + '</td></tr>' + 
+                                     '<tr><th>Exchanges Growler:</th><td>' + exchangesGrowlerText + '</td></tr>' + 
+                                     '<tr><th>Growler Bottle Price:</th><td>$' + _localBrewery.growlerBottlePrice + '</td></tr>' + 
+                                     '<tr><th>Sells On Sunday:</th><td>' + sellsOnSundayText + '</td></tr>' + 
+                                     '</table>';
+                _localBrewery.latLang = new google.maps.LatLng(_localBrewery.coordinates[0], _localBrewery.coordinates[1]);
+                var linksArray = new Array();
+                var linksProperties = {
+                    'beerAdvocateUrl': 'Beer Advocate',
+                    'googlePlusUrl': 'Google+',
+                    'breweryWebsiteUrl': 'Website'
+                };
+                for (var linksProperty in linksProperties) {
+                    if (_localBrewery[linksProperty]) {
+                        linksArray.push('<a target="_blank" href="' + _localBrewery[linksProperty] + '">' + linksProperties[linksProperty] + '<br/>');
+                    }
+                }
+                var links = '<h3>Links:</h3>' + linksArray.join('');
+                var html = '<div id="content">' +
+                           '<div id="siteNotice">' +
+                           '</div>' +
+                           '<img src="' + _localBrewery.logo + '" style="max-height: 100px; max-width: 100px; float: right" />' +
+                           '<h1 id="firstHeading" class="firstHeading">' + _localBrewery.name + '</h1>' +
+                           '<p>' + _localBrewery.address + '</p>' +
+                           '<div id="bodyContent"><p>' + _localBrewery.description + '</p>' + 
+                           checklistTable + '<br/>' + 
+                           links
+                           '</div>' +
+                           '</div>';
+    
+    
+                _localBrewery.infoWindow = new google.maps.InfoWindow({
+                    content: html
+                });
+        
+                _localBrewery.marker = new google.maps.Marker({
+                    map: map,
+                    position: _localBrewery.latLang
+                });
+        
+                addMarkerClickFunction(map, _localBrewery);
             }
-            var links = '<h3>Links:</h3>' + linksArray.join('');
-            var html = '<div id="content">' +
-                       '<div id="siteNotice">' +
-                       '</div>' +
-                       '<img src="' + _localBrewery.logo + '" style="max-height: 100px; max-width: 100px; float: right" />' +
-                       '<h1 id="firstHeading" class="firstHeading">' + _localBrewery.name + '</h1>' +
-                       '<p>' + _localBrewery.address + '</p>' +
-                       '<div id="bodyContent"><p>' + _localBrewery.description + '</p>' + 
-                       checklistTable + '<br/>' + 
-                       links
-                       '</div>' +
-                       '</div>';
-    
-            _localBrewery.infoWindow = new google.maps.InfoWindow({
-                content: html
-            });
-    
-            _localBrewery.marker = new google.maps.Marker({
-                map: map,
-                position: _localBrewery.latLang
-            });
-    
-            addMarkerClickFunction(map, _localBrewery);
         }
     }
     
